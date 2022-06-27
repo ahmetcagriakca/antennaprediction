@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  aiapi:
+    image: ahmetcagriakca/antenna-prediction:0.1
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    environment: 
+      - ANN_BATCH_SIZE=4096
+    ports:
+      - '21110:21110'
+    volumes:
+      - c:\aimodels:/app/aimodels
